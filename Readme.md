@@ -7,7 +7,7 @@ May 22nd, 2016
 Analysis:
 ---------
 
-All the code for the loading and transforming the data (complete with helpful comments) can be found in `run_analysis.R`. It produces `activity_tidy.txt` as described in the assignment.
+All the code for the loading and transforming the data (complete with helpful comments) can be found in `run_analysis.R`. It produces `activity_tidy.txt` as described in the assignment as long as the `getdata_projectfiles_UCI HAR Dataset.zip` is in the working directory.
 
 Codebook:
 ---------

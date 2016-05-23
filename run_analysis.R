@@ -12,14 +12,16 @@ library(dplyr)
 ## 4. Appropriately labels the data set with descriptive variable names:
 ##
 
+unzip("getdata_projectfiles_UCI HAR Dataset.zip")
+
 # Read feature labels
-features <- read.table("features.txt", header = FALSE, col.names = c("column", "variable"))
+features <- read.table("UCI HAR Dataset/features.txt", header = FALSE, col.names = c("column", "variable"))
 
 # Read the test variables using the feature names
-x_test <- read.table("test/X_test.txt", col.names = features$variable)
+x_test <- read.table("UCI HAR Dataset/test/X_test.txt", col.names = features$variable)
 
 # Read the activity class
-y_test <- read.table("test/y_test.txt", col.names = c("activity"))
+y_test <- read.table("UCI HAR Dataset/test/y_test.txt", col.names = c("activity"))
 
 # Read the subject label
 subject_test <- read.table("test/subject_test.txt", col.names = c("subject"))
@@ -28,9 +30,9 @@ subject_test <- read.table("test/subject_test.txt", col.names = c("subject"))
 test <- cbind(y_test, subject_test, x_test)
 
 # Do the same for train
-x_train <- read.table("train/X_train.txt", col.names = features$variable)
-y_train <- read.table("train/y_train.txt", col.names = c("activity"))
-subject_train <- read.table("train/subject_train.txt", col.names = c("subject"))
+x_train <- read.table("UCI HAR Dataset/train/X_train.txt", col.names = features$variable)
+y_train <- read.table("UCI HAR Dataset/train/y_train.txt", col.names = c("activity"))
+subject_train <- read.table("UCI HAR Dataset/train/subject_train.txt", col.names = c("subject"))
 train <- cbind(y_train, subject_train, x_train)
 
 ##
@@ -53,7 +55,7 @@ activity_subset <- activity %>%
 ##
 
 # Get the labels
-labels <- read.table("activity_labels.txt", col.names = c("activity", "label"))
+labels <- read.table("UCI HAR Dataset/activity_labels.txt", col.names = c("activity", "label"))
 
 activity_labeled <- activity_subset %>%
   # Join with the labels
